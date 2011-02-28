@@ -1,0 +1,122 @@
+﻿<Window x:Class="EditRoom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:EditRoom"
+        WindowStyle="None" WindowState="Maximized"
+        FontFamily="{Binding FontFamily}"
+        FontSize="{Binding FontSize}"
+        Background="{Binding BackgroundColor}"
+        Foreground="{Binding ForegroundColor}"
+        Title="Edit Room">
+
+    <Window.Resources>
+        <my:DirtyAsteriskConverter x:Key="DirtyAsteriskConverter"/>
+    </Window.Resources>
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="NewCommandExecuted"
+                        CanExecute="NewCommandCanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Open"
+                        Executed="OpenCommandExecuted"
+                        CanExecute="OpenCommandCanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Save"
+                        Executed="SaveCommandExecuted"
+                        CanExecute="SaveCommandCanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="CloseCommandExecuted"
+                        CanExecute="CloseCommandCanExecute"/>
+
+        <CommandBinding Command="Cut"
+                        Executed="CutCommandExecuted"
+                        CanExecute="CutCommandCanExecute"/>
+        <CommandBinding Command="Copy"
+                        Executed="CopyCommandExecuted"
+                        CanExecute="CopyCommandCanExecute"/>
+        <CommandBinding Command="Paste"
+                        Executed="PasteCommandExecuted"
+                        CanExecute="PasteCommandCanExecute"/>
+        <CommandBinding Command="Undo"
+                        Executed="UndoCommandExecuted"
+                        CanExecute="UndoCommandCanExecute"/>
+        <CommandBinding Command="Redo"
+                        Executed="RedoCommandExecuted"
+                        CanExecute="RedoCommandCanExecute"/>
+    </Window.CommandBindings>
+    
+    <Window.InputBindings>
+        <KeyBinding Key="N"
+                    Modifiers="Control"
+                    Command="ApplicationCommands.New"/>
+        <KeyBinding Key="O"
+                    Modifiers="Control"
+                    Command="ApplicationCommands.Open"/>
+        <KeyBinding Key="S"
+                    Modifiers="Control"
+                    Command="ApplicationCommands.Save"/>
+        <KeyBinding Key="W"
+                    Modifiers="Control"
+                    Command="ApplicationCommands.Close"/>
+
+        <KeyBinding Key="X"
+                    Modifiers="Control"
+                    Command="Cut"/>
+        <KeyBinding Key="C"
+                    Modifiers="Control"
+                    Command="Copy"/>
+        <KeyBinding Key="V"
+                    Modifiers="Control"
+                    Command="Paste"/>
+        <KeyBinding Key="Z"
+                    Modifiers="Control"
+                    Command="Undo"/>
+        <KeyBinding Key="Y"
+                    Modifiers="Control"
+                    Command="Redo"/>
+    </Window.InputBindings>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="Edit Room"/>
+            <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+                <TextBlock Text="{Binding CurrentFilePath}" Margin="5"/>
+                <TextBlock Text="{Binding Dirty, Converter={StaticResource DirtyAsteriskConverter}}"/>
+            </StackPanel>
+        </Grid>
+        
+        <TextBox x:Name="Editor"
+                 Grid.Column="1" Grid.Row="1" 
+                 AcceptsTab="True" 
+                 AcceptsReturn="True"
+                 BorderThickness="0" 
+                 UndoLimit="50" 
+                 IsUndoEnabled="True"
+                 HorizontalScrollBarVisibility="Disabled"
+                 VerticalScrollBarVisibility="Disabled"
+                 TextWrapping="Wrap"
+                 FontFamily="{Binding FontFamily}"
+                 FontSize="{Binding FontSize}"
+                 Background="{Binding BackgroundColor}"
+                 Foreground="{Binding ForegroundColor}"
+                 Text="{Binding Text}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="Edit Room.exe" version="1.0.0.5" publicKeyToken="30df16b3bf1f8c14" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Edit Room" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Edit Room.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Edit Room.exe" size="20992">
+      <assemblyIdentity name="Edit Room" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>vpNksaOcrK6Sjanau5A/aTYV6wk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=Ian-1555\Ian" issuerKeyHash="499b53e27002971f8949261c5912d3a24fc783ac" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>vAWpM6lIjvwistw9Ng9+5YDhvSI=</DigestValue></Reference></SignedInfo><SignatureValue>YapjNH6oRIPTuMdaU8R0a9JShIgpQJL7CBy0wPoOHGSU/tzMgfiuJjYRnIVGL1y67OuoxuceAoSfLVa3mvzx9NGp8ZponNWXd1BcKqWr1FatzX1euzbrvc++SzgiW48LBInmM1Th1tZhuXA994knjeGlYRgXvMrjJkh+ij3RTO4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xFAGw+enWLdYIkWdKYzcOmK8Vwki41hWOyBqTUwe3GVKdYDGsUqiE1sXzAa+3CrK9G3PWFcN+kbcaaezU9xlLtc2vmj50nb+A3AueJ+yxPTb1BPLkppULVQ+MeSF84xffXabFBXSem4SDu6se53mPSUg00fu1ndw//0NKgi2v8c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="22bde180e57e0f363ddcb222fc8e48a933a905bc" Description="" Url=""><as:assemblyIdentity name="Edit Room.exe" version="1.0.0.5" publicKeyToken="30df16b3bf1f8c14" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Ian-1555\Ian</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>lCzUAAlu1k3EAy2KzMNcn3N8QUY=</DigestValue></Reference></SignedInfo><SignatureValue>Jne2YxX1F6MCou6jwvjI5iBVF9BbJH44Tv3uaqhvurr8a45FqjDWSXIrEsPIAN3V0UqdL4R0gopSn4crz8Z6gVINp5dt1CSBvh0IvpYJahgVj0JXP0Gyw0TRDGMer1evEkHpOtVMR9uC5JtZ90j7SCGU0aC7TmN2HoSP6Bh5FIA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xFAGw+enWLdYIkWdKYzcOmK8Vwki41hWOyBqTUwe3GVKdYDGsUqiE1sXzAa+3CrK9G3PWFcN+kbcaaezU9xlLtc2vmj50nb+A3AueJ+yxPTb1BPLkppULVQ+MeSF84xffXabFBXSem4SDu6se53mPSUg00fu1ndw//0NKgi2v8c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQUDkinDnTqLNFJipqzAM+ITANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgASQBhAG4ALQAxADUANQA1AFwASQBhAG4wHhcNMTAwNzI5MjE1MDAzWhcNMTEwNzMwMDM1MDAzWjAjMSEwHwYDVQQDHhgASQBhAG4ALQAxADUANQA1AFwASQBhAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMRQBsPnp1i3WCJFnSmM3DpivFcJIuNYVjsgak1MHtxlSnWAxrFKohNbF8wGvtwqyvRtz1hXDfpG3Gmns1PcZS7XNr5o+dJ2/gNwLnifssT029QTy5KaVC1UPjHkhfOMX312mxQV0npuEg7urHud5j0lINNH7tZ3cP/9DSoItr/HAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAZ4CzwaWkoe4sOAumoC02cTkrrOgqXgYkVQzAvqvPnwnXc4tDcVDlAI56BQ/FLubv2QeqafjxSzPjLdx3vkMA9W1Qxi2FTbctTMlw2lEz5+Bws9RDJHxaUjRcyMvpTGgUET/Dvytx1lV5yXrsAiiYsISZBfdlKxQeeRCii1OQEF4=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
