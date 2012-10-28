@@ -1,10 +1,13 @@
 #pragma once
 
+using namespace Platform;
+using namespace Windows::UI::Xaml::Data;
+
 namespace EditRoom
 {
 
-[Windows::UI::Xaml::Data::Bindable]
-public ref class MainPageViewModel sealed : public Windows::UI::Xaml::Data::INotifyPropertyChanged
+[Bindable]
+public ref class MainPageViewModel sealed : public INotifyPropertyChanged
 {
 public:
 	MainPageViewModel(void);
@@ -20,27 +23,27 @@ public:
 		void set(bool value);
 	}
 
-	property Platform::String^ CurrentFilePath
+	property String^ CurrentFilePath
 	{
-		Platform::String^ get();
-		void set(Platform::String^ value);
+		String^ get();
+		void set(String^ value);
 	}
 
-	property Platform::String^ Text
+	property String^ Text
 	{
-		Platform::String^ get();
-		void set(Platform::String^ value);
+		String^ get();
+		void set(String^ value);
 	}
 
-	virtual event Windows::UI::Xaml::Data::PropertyChangedEventHandler^ PropertyChanged;
+	virtual event PropertyChangedEventHandler^ PropertyChanged;
 
 private:
-	void NotifyPropertyChanged(Platform::String^ prop);
+	void NotifyPropertyChanged(String^ prop);
 	void WriteFile();
 
 	bool dirty;
-	Platform::String^ currentFilePath;
-	Platform::String^ text;
+	String^ currentFilePath;
+	String^ text;
 };
 
 }

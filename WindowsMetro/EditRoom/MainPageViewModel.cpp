@@ -3,6 +3,7 @@
 
 using namespace EditRoom;
 using namespace Concurrency;
+using namespace Platform;
 using namespace Windows::Storage;
 using namespace Windows::Storage::Pickers;
 using namespace Windows::Storage::Streams;
@@ -10,7 +11,7 @@ using namespace Windows::UI::Popups;
 using namespace Windows::UI::Xaml::Data;
 
 
-static Platform::String^ defaultText("Edit Room is a very simple text editor for Windows.\n\n" +
+static String^ defaultText("Edit Room is a very simple text editor for Windows.\n\n" +
             "Keyboard shortcuts:\n\n" +
             "* File Menu:\n" +
             "   - Ctrl+N - New file\n" +
@@ -50,7 +51,7 @@ void MainPageViewModel::OpenFile()
 	{
 		if (file)
 		{
-			task<Platform::String^>(PathIO::ReadTextAsync(file->Path)).then([this](Platform::String^ content)
+			task<String^>(PathIO::ReadTextAsync(file->Path)).then([this](String^ content)
 			{
 				Text = content;
 			});
@@ -120,13 +121,13 @@ void MainPageViewModel::Dirty::set(bool value)
 }
 
 // Get the path of the current file.
-Platform::String^ MainPageViewModel::CurrentFilePath::get(void)
+String^ MainPageViewModel::CurrentFilePath::get(void)
 {
 	 return currentFilePath;
 }
 
 // Set the path of the current file.
-void MainPageViewModel::CurrentFilePath::set(Platform::String^ value)
+void MainPageViewModel::CurrentFilePath::set(String^ value)
 {
 	 if(currentFilePath != value)
 	 {
@@ -136,13 +137,13 @@ void MainPageViewModel::CurrentFilePath::set(Platform::String^ value)
 }
 
 // Get the current text contents of the open document.
-Platform::String^ MainPageViewModel::Text::get(void)
+String^ MainPageViewModel::Text::get(void)
 {
 	 return text;
 }
 
 // Set the text content of the open document.
-void MainPageViewModel::Text::set(Platform::String^ value)
+void MainPageViewModel::Text::set(String^ value)
 {
 	 if(text != value)
 	 {
@@ -161,7 +162,7 @@ void MainPageViewModel::WriteFile()
 }
 
 // Property change helper.
-void MainPageViewModel::NotifyPropertyChanged(Platform::String^ prop)
+void MainPageViewModel::NotifyPropertyChanged(String^ prop)
 {
 	PropertyChangedEventArgs^ args = ref new PropertyChangedEventArgs(prop);
 	PropertyChanged(this, args);
