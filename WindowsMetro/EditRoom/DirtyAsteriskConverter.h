@@ -1,17 +1,17 @@
 #pragma once
 
+using namespace Platform;
+using namespace Windows::UI::Xaml::Data;
+using namespace Windows::UI::Xaml::Interop;
+
 namespace EditRoom
 {
 
-public ref class DirtyAsteriskConverter sealed : public Windows::UI::Xaml::Data::IValueConverter
+public ref class DirtyAsteriskConverter sealed : public IValueConverter
 {
 public:
-	DirtyAsteriskConverter(void);
-	virtual ~DirtyAsteriskConverter(void);
-
-	virtual Platform::Object^ Convert(Platform::Object^ value, Windows::UI::Xaml::Interop::TypeName targetType, Platform::Object^ parameter, Platform::String^ language);
-	virtual Platform::Object^ ConvertBack(Platform::Object^ value, Windows::UI::Xaml::Interop::TypeName targetType, Platform::Object^ parameter, Platform::String^ language);
-
+	virtual Object^ Convert(Object^ value, TypeName targetType, Object^ parameter, String^ language);
+	virtual Object^ ConvertBack(Object^ value, TypeName targetType, Object^ parameter, String^ language);
 };
 
 }

@@ -2,29 +2,23 @@
 #include "DirtyAsteriskConverter.h"
 
 using namespace EditRoom;
+using namespace Platform;
+using namespace Windows::UI::Xaml::Data;
+using namespace Windows::UI::Xaml::Interop;
 
 static Platform::String^ asterisk("*");
 
-DirtyAsteriskConverter::DirtyAsteriskConverter(void)
+Platform::Object^ DirtyAsteriskConverter::Convert(Object^ value, TypeName targetType, Object^ parameter, String^ language)
 {
-}
-
-
-DirtyAsteriskConverter::~DirtyAsteriskConverter(void)
-{
-}
-
-Platform::Object^ DirtyAsteriskConverter::Convert(Platform::Object^ value, Windows::UI::Xaml::Interop::TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
-{
-	if(static_cast<Platform::Boolean>(value))
+	if(static_cast<bool>(value))
 	{
 		return asterisk;
 	}
 	return "";
 }
 
-Platform::Object^ DirtyAsteriskConverter::ConvertBack(Platform::Object^ value, Windows::UI::Xaml::Interop::TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+Platform::Object^ DirtyAsteriskConverter::ConvertBack(Object^ value, TypeName targetType, Object^ parameter, String^ language)
 {
-	return static_cast<Platform::String^>(value) == asterisk;
+	return static_cast<String^>(value) == asterisk;
 }
 
