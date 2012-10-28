@@ -1,0 +1,10 @@
+syntax: glob
+*.suo
+*.user
+WindowsDesktop/EditRoom/publish
+WindowsMetro/ipch
+WindowsMetro/Debug
+WindowsMetro/Release
+WindowsMetro/EditRoom/Debug
+WindowsMetro/EditRoom/Release
+WindowsMetro/EditRoom/Generated Files
